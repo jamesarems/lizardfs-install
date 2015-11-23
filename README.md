@@ -159,8 +159,11 @@ We can add more chunk servers and shadow servers for  data security and high ava
                    7.  Recover deleted files from trash bin
 
   # mfsmount /trash -H mfsmaster -o mfsmeta
+  
   # ls
+  
   reserved  trash
 
   # cd trash
+  
   # mv test.txt undel    ( Move files to ‘undel’ folder inside the trash folder )
