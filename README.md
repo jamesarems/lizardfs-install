@@ -86,7 +86,7 @@ Also add,
 
  #cp mfschunkserver.cfg.default.dist mfschunkserver.cfg			
 
-	mfshdd.cfg file is needed to indicate mountpoints of hard drives for your chunkserver.Assuming that there are 2 disks mounted at /mnt/chunk1 and/mnt/chunk2 locations, your mfshdd.cfg file should look like this: 
+mfshdd.cfg file is needed to indicate mountpoints of hard drives for your chunkserver.Assuming that there are 2 disks mounted at /mnt/chunk1 and/mnt/chunk2 locations, your mfshdd.cfg file should look like this 
 
   /mnt/chunk1
 
@@ -94,9 +94,9 @@ Also add,
 		 	 	 		
 Remember that chunk servers are run as user mfs, so directories above need appropriate permissions:	
 
- #chown ­R mfs:mfs /mnt/chunk1				
+ #chown -R mfs:mfs /mnt/chunk1				
 
- #chown ­R mfs:mfs /mnt/chunk2
+ #chown -R mfs:mfs /mnt/chunk2
 
  #mfschunkserver start
 
@@ -155,3 +155,12 @@ If we are using debian client,
 That's it . Now we have world’s best highly reliable  open source data server/center . 
 
 We can add more chunk servers and shadow servers for  data security and high availability .
+
+                   7.  Recover deleted files from trash bin
+
+  # mfsmount /trash -H mfsmaster -o mfsmeta
+  # ls
+  reserved  trash
+
+  # cd trash
+  # mv test.txt undel    ( Move files to ‘undel’ folder inside the trash folder )
